@@ -27,23 +27,33 @@ namespace icanspoekkk
             for (int i = 0; i < grid.Length; i++)
             {
                 
-                while (crosses)
+                if (crosses)
                 {
                     grid[row, col] = 1;
-                    crosses = false;
                 }
 
-                while (!(crosses))
+                if (!(crosses))
                 {
                     grid[row, col] = 2;
-                    crosses = true;
                 }
+                crosses = !crosses;
+                
             }
+            Program.PrintGrid(grid);
+
 
         }
 
-        static string PrintGrid(string[] args)
+        static void PrintGrid(int[,] grid)
         {
+            for (int i = 0; i < grid.GetLength(0); i++)
+            {
+                for (int j = 0; j < grid.GetLength(1); j++)
+                {
+                    Console.Write(grid[i,j] + "\t");
+                }
+                Console.WriteLine();
+            }
             
 
         }
