@@ -4,9 +4,9 @@ using System.Reflection.Metadata;
 
 namespace icanspoekkk
 {
-    class program
+    class Program
     {
-        static void main(string[] args)
+        static void Main(string[] args)
         {
             int[,] grid = 
             {
@@ -15,30 +15,36 @@ namespace icanspoekkk
                 {0, 0, 0}
             };
             Console.WriteLine("hello and welcome to the game");
+            Thread.Sleep(1000);
             Console.WriteLine("first player is naughts, second is crosses and if you have a third player theyre gonna have to wait.");
+            Thread.Sleep(1000);
             Console.WriteLine("enter the row you would like to place your piece on first ");
-            row = Console.ReadLine();
+            int row = Convert.ToInt16(Console.ReadLine());
             Console.WriteLine("enter the column you would like to place your piece in first ");
-            col = Console.ReadLine();
-            bool crosses = True;
+            int col = Convert.ToInt16(Console.ReadLine());
+            bool crosses = true;
 
             for (int i = 0; i < grid.Length; i++)
             {
                 
                 while (crosses)
                 {
-                    grid[row, col] = "1";
-                    crosses = False;
+                    grid[row, col] = 1;
+                    crosses = false;
                 }
 
-                while (not(crosses))
+                while (!(crosses))
                 {
-                    grid[row, col] = "2";
-                    crosses = True;
+                    grid[row, col] = 2;
+                    crosses = true;
                 }
             }
 
+        }
 
+        static string PrintGrid(string[] args)
+        {
+            
 
         }
 
